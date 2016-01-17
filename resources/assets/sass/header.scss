@@ -1,0 +1,26 @@
+
+.header{
+  margin: 0;
+  padding: 5px 15px;
+  height: 100px;
+  width: 100%;
+
+  background-color: #D6D6D6;
+  background-image: url("../images/header.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.header_title{
+  max-width: 500px;
+  max-height: 50px;
+  font-weight: bold;
+}
+
+.header_quote{
+  font-style: italic;
+  max-width: 500px;
+  max-height: 50px;
+  height: calc(100% + 25px); 
+  overflow: hidden;
+}

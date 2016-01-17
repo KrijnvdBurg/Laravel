@@ -1,0 +1,16 @@
+
+.container{
+	width: 700px;
+	margin-left: 10px;
+	float: left;
+}
+
+.container article h2{
+	width: 300px;
+}
+
+.container article{
+	margin-bottom: 40px;
+	width: 700px;
+	text-align: justify;
+}
