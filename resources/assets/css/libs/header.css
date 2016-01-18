@@ -6,7 +6,8 @@
   background-color: #D6D6D6;
   /*background-image: url("../images/header.png");*/
   background-position: right;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
 
 .header_title {
   font-size: 50px;
