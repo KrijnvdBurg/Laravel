@@ -5,11 +5,15 @@
 	<hr class="hr_doubleInfinite"/>
 
 	@foreach ($articles as $article)
-		<article class="article{{ $article->id }}">
-			<h2><a href="{{ url('/articles', $article->id)}}">{{ $article->title }}</a></h2>
+		<article class="post_article article{{ $article->id }}">
+			<header>
+				<h2 class="post_h2"><a href="{{ url('/articles', $article->id)}}">{{ $article->title }}</a></h2>
+			</header>
 			<hr class="hr_dotted"/>
-			<div class="articleBody">{{ $article->body }}</div>
+			<p class="post_body">{{ $article->body }}</p>
 		</article>
 	@endforeach
+
+
 
 @stop

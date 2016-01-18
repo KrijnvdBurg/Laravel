@@ -4,11 +4,12 @@
   height: 100px;
   width: 100%;
   background-color: #D6D6D6;
-  background-image: url("../images/header.png");
+  /*background-image: url("../images/header.png");*/
   background-position: right;
   background-repeat: no-repeat; }
 
 .header_title {
+  font-size: 50px;
   max-width: 500px;
   max-height: 50px;
   font-weight: bold; }
@@ -17,7 +18,7 @@
   font-style: italic;
   max-width: 500px;
   max-height: 50px;
-  height: calc(100% + 25px);
+  height: 100%;
   overflow: hidden; }
 
 /*# sourceMappingURL=header.css.map */

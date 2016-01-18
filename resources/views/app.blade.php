@@ -17,7 +17,8 @@
 			@include('flash::message')
 			@yield('content')
 		</div>
-		@include('articles._asideLatest')
+		
+		@include('partials._asideLatest')
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/all.js') }}"></script>

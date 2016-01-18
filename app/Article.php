@@ -10,6 +10,9 @@ class Article extends Model {
 		'published_at'
 	];
 
+	public function scopeLatestArticles($query){
+		$query->where('published_at', '<=', Carbon::now());
+	}
 
 	public function scopePublished($query){
 		$query->where('published_at', '<=', Carbon::now());

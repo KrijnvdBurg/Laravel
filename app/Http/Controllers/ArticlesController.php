@@ -12,13 +12,14 @@ use Auth;
 class ArticlesController extends Controller {
 
 	public function __construct(){
-		$this->middleware('auth', ['only' => 'create']);
+		$this->middleware('auth', ['only' => 'create', 'only'=> 'edit']);
 	}
 
 	public function index(){
 		$articles = Article::latest('published_at')->published()->get();
+		//$asideLatest = Article::latest()->get("5");
 		return view('articles.index')->with('articles', $articles);
-	
+		//return View::make('articles.index', $articles)->nest('articles._asideLatest', $asideLatest);
 	}
 
 	public function show(Article $article){
