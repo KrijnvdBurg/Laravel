@@ -5,8 +5,8 @@
 
 	<hr/>
 
-	{!! Form::model($article = new \App\Article, ['url' => 'articles']) !!}
-		@include('articles._form', ['submitButtonText' => 'Add Article']);
+	{!! Form::model($article = new \ApAp\Article, ['url' => 'Articles']) !!}
+		@include('articles._form', ['submitButtonText' => 'Add Article'])
 	{!! Form::close() !!}
 
 	@if ($errors->any())

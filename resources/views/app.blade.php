@@ -13,21 +13,16 @@
 		@include('partials.header')
 		@include('partials.nav')
 
-		<div class="container">
+		<main class="container">
 			@include('flash::message')
 			@yield('content')
-		</div>
-		
+			
+		</main>
 		@include('partials._asideLatest')
-
-		<!-- Scripts -->
+		@include('partials.footer')
 		<script src="{{ asset('js/all.js') }}"></script>
 		@yield('footer')
 
 	</div>
-	<script>
-		//$('div.alert').not('.alert-important').delay(3000).slideUp(300);
-	</script>
-
 </body>
 </html>

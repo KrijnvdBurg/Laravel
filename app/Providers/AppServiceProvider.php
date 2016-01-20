@@ -12,7 +12,9 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		view()->composer('partials._asideLatest', function($view){
+			$view->with('latest', Article::latest()->first());
+		});
 	}
 
 	/**

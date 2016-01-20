@@ -24,6 +24,7 @@ class ArticleRequest extends Request {
 			'title' => 'required|min:3',
 			'body' => 'required',
 			'published_at' => 'required|date',
+			'excerpt' => 'required|min:32',
 			'tag_list' => 'required',
 			//
 		];

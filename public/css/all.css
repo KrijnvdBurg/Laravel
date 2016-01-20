@@ -5925,12 +5925,16 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 /*# sourceMappingURL=app.css.map */
 
-body{
+html, body{
 	background-color: #D6D6D6;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper{
 	width: 960px;
+    min-height: 100%;
+    margin-bottom: 100px;
 	margin: auto;
 }
 
@@ -5958,15 +5962,9 @@ body{
 	border: 0;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed black;
     background: #999;
 }
-
-
-	
-
-
-/*# sourceMappingURL=app.css.map */
 .header {
   margin: 0;
   padding: 5px 15px;
@@ -5991,6 +5989,15 @@ body{
   overflow: hidden; }
 
 /*# sourceMappingURL=header.css.map */
+
+.footer {
+  margin-top: 30px;
+  height: 100px;
+  width: 960px;
+  background-color: #DDDDDD;
+  float: left; }
+
+/*# sourceMappingURL=footer.css.map */
 
 .latestArticles{
 	padding: 10px;
@@ -6021,15 +6028,14 @@ body{
 }
 .container{
 	width: 700px;
-	margin-left: 10px;
 	float: left;
 }
 
 .container article{
-	margin-top: 40px;
+	margin-bottom: 20px;
 	width: 100%;
+	padding: 5px;
 	text-align: justify;
-	max-height: 300px;
 }
 
 .container article header h2{
@@ -6042,17 +6048,60 @@ body{
 .container article header h2:first-letter{
 	text-transform: uppercase;
 	font-size: 35px;
-
 }
 
 .container article header h2 a{
 	width: 500px;
-
 }
 
 .container .post_article .post_body{
-	max-height: 400px;
+	max-height: 380px;
 	overflow: hidden;
 }
 
+
+.container .locked{
+	background-color:rgba(255,99,71,0.65);
+}
+
+.container .locked:hover, .container .locked a:hover{
+	cursor: no-drop;
+}
+
+.article_lockedSpan{
+	font-size: 18px;
+	padding: 2px;
+	border: 1px solid red;
+	background-color: #949494;
+	float: right;
+}
+
+
+/*show*/
+
+.articleBody{
+	margin-top: 40px;
+	width: 100%;
+	text-align: justify;
+}
+
+article ul{
+	margin: 0;
+	padding: 0;
+}
+
+article ul .article_tags{
+	font-size: 16px;
+	margin-top: 20px;
+	list-style-type: none;
+	display: inline-block;
+	padding: 2px 14px;
+	background-color: #DDDDDD;
+	border: 1px solid #337ab7;
+}
+
+article ul .article_tags a{
+	color: black;
+	display: block;
+}
 /*# sourceMappingURL=all.css.map */

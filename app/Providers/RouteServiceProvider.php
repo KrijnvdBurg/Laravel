@@ -2,6 +2,8 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use App\Tag;
+use App\Article;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -20,11 +22,16 @@ class RouteServiceProvider extends ServiceProvider {
 	 * @param  \Illuminate\Routing\Router  $router
 	 * @return void
 	 */
-	public function boot(Router $router)
-	{
+	public function boot(Router $router){
 		parent::boot($router);
 
-		$router->model('articles', 'App\Article');
+		$router->bind('Articles', function($id){
+			return Article::published()->findOrFail($id);
+		});
+
+		$router->bind('tags', function($name){
+			return Tag::where('name', $name)->firstOrFail();
+		});
 	}
 
 	/**

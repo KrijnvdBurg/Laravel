@@ -15,6 +15,7 @@ elixir(function(mix) {
     //mix.less('app.less');
 	mix.sass('app.scss', 'resources/assets/css/libs/app.css');
 	mix.sass('header.scss', 'resources/assets/css/libs/header.css');
+	mix.sass('footer.scss', 'resources/assets/css/libs/footer.css');
 
 	mix.styles([
 		'libs/app.css',
@@ -22,6 +23,7 @@ elixir(function(mix) {
 		'libs/normalize.css',
 		'libs/style.css',
 		'libs/header.css',
+		'libs/footer.css',
 		'libs/asideLatest.css',
 		'libs/articles_general.css'
 		

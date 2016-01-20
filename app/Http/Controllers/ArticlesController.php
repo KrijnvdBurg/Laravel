@@ -16,10 +16,10 @@ class ArticlesController extends Controller {
 	}
 
 	public function index(){
-		$articles = Article::latest('published_at')->published()->get();
-		//$asideLatest = Article::latest()->get("5");
-		return view('articles.index')->with('articles', $articles);
-		//return View::make('articles.index', $articles)->nest('articles._asideLatest', $asideLatest);
+		//$articles = Article::orderBy('id', 'DESC')->latest('published_at')->published()->get();
+		$articles = Article::orderBy('id', 'DESC')->latest('published_at')->get();
+		$latest = Article::latest()->first();
+		return view('articles.index', compact('articles', 'latest'));
 	}
 
 	public function show(Article $article){
@@ -34,7 +34,7 @@ class ArticlesController extends Controller {
 	public function store(ArticleRequest $request){
 		$this->createArticle($request);
 		flash('Your article has been created')->important();
-		return redirect('articles');
+		return redirect('Articles');
 	}
 
 	public function edit(Article $article){
@@ -45,8 +45,9 @@ class ArticlesController extends Controller {
 	public function update(Article $article, ArticleRequest $request){
 		$article->update($request->all()); 
 		$this->syncTags($article, $request->input('tag_list'));
-		return redirect('articles');
+		return redirect('Articles');
 	}
+
 
 	private function createArticle(ArticleRequest $request){
 		$article = Auth::user()->articles()->create($request->all());
@@ -57,6 +58,5 @@ class ArticlesController extends Controller {
 	private function syncTags(Article $article, array $tags){
 		$article->tags()->sync($tags);
 	}
-
 
 }

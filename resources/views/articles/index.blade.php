@@ -5,13 +5,14 @@
 	<hr class="hr_doubleInfinite"/>
 
 	@foreach ($articles as $article)
-		<article class="post_article article{{ $article->id }}">
-			<header>
-				<h2 class="post_h2"><a href="{{ url('/articles', $article->id)}}">{{ $article->title }}</a></h2>
-			</header>
-			<hr class="hr_dotted"/>
-			<p class="post_body">{{ $article->body }}</p>
-		</article>
+			<article id="article{{ $article->id }}" class="post_article {{App\Article::date_locker($article->published_at)}}">
+				<header>
+					<h2 class="post_h2">{!! App\Article::ahref_locker($article) !!}</h2>
+				</header>
+				<hr class="hr_dotted"/>
+				<p class="post_body">{{ $article->excerpt }}</p>
+			</article>
+
 	@endforeach
 
 

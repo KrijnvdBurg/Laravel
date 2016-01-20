@@ -10,6 +10,11 @@
 		</div>
 
 		<div class="form-group">
+			{!! Form::label('excerpt', 'Excerpt') !!}
+			{!! Form::textarea('excerpt', null, ['class' => 'form-control']) !!}
+		</div>
+
+		<div class="form-group">
 			{!! Form::label('published_at', 'published On:') !!}
 			{!! Form::input('date', 'published_at', $article->published_at->format('Y-m-d'), ['class' => 'form-control']) !!}
 		</div>
@@ -24,33 +29,10 @@
 		</div>
 
 	@section('footer')
-
 		<script>
 			$('#tag_list').select2({
-				placeholder: 'Choose one or multiple tags'
-				//tags: true,
-
-				/*ajax: { 
-					dataType: 'json',
-					url: 'tags.json',
-					processResults: function(data){
-						return { results: data }
-					}*/
-
-					/*dataType: 'json',
-					url: 'api/tags',
-					delay: 250,
-					data: function(params){
-						return{
-							q: params.term;
-						}
-					},
-
-					processResults: function(data){
-						return{ results: data }
-					}*/
-				
-			});
+				placeholder: 'Choose one or multiple tags',
+				tags: true
+			})
 		</script>
-
 	@endsection
