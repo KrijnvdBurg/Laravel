@@ -12,17 +12,14 @@
 	<div class="wrapper">
 		@include('partials.header')
 		@include('partials.nav')
-
-		<main class="container">
-			@include('flash::message')
-			@yield('content')
-			
-		</main>
-		@include('partials._asideLatest')
-		@include('partials.footer')
+		@include('flash::message')
+		@yield('content')
+		@yield('footer')	
+		
 		<script src="{{ asset('js/all.js') }}"></script>
-		@yield('footer')
-
+		<script>
+		
+        </script>
 	</div>
 </body>
 </html>

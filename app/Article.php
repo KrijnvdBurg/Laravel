@@ -22,13 +22,22 @@ class Article extends Model {
 
 	public static function ahref_locker($article){
 		if($article->published_at >= Carbon::now()){
-			return $article->title . '<span class="article_lockedSpan">Publishes: ' . $article->published_at->format('Y-m-d') . '</span>';
+			return '<h2 class="post_h2">' . $article->title . '</h2>';		
 		}
 		else{
-			return '<a href="Articles/'. $article->id . '">'.$article->title.'</a>';
+			return '<h2 class="post_h2"> <a href="Articles/'. $article->id . '">'.$article->title.'</a></h2>';
 		}
 	}
 
+
+	public static function warning_locker($article){
+		if($article->published_at >= Carbon::now()){
+			return '<p class="article_lockedSpan">Full article publishes: ' . $article->published_at->format('Y-m-d') . '</p>';		
+		}
+		else{
+			return '<p class="article_openSpan">Click to read the full article!</p>';
+		}
+	}
 
 	public function scopeLatestArticles($query){
 		$query->where('published_at', '<=', Carbon::now());

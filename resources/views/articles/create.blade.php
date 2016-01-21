@@ -2,10 +2,9 @@
 
 @section('content')
 	<h1>Write a new article</h1>
-
 	<hr/>
 
-	{!! Form::model($article = new \ApAp\Article, ['url' => 'Articles']) !!}
+	{!! Form::model($article = new \App\Article, ['url' => 'Articles']) !!}
 		@include('articles._form', ['submitButtonText' => 'Add Article'])
 	{!! Form::close() !!}
 

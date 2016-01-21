@@ -12,12 +12,11 @@ use Auth;
 class ArticlesController extends Controller {
 
 	public function __construct(){
-		$this->middleware('auth', ['only' => 'create', 'only'=> 'edit']);
+		$this->middleware('auth' , ['only' => 'create', 'only'=> 'edit']);
 	}
 
 	public function index(){
-		//$articles = Article::orderBy('id', 'DESC')->latest('published_at')->published()->get();
-		$articles = Article::orderBy('id', 'DESC')->latest('published_at')->get();
+		$articles = Article::orderBy('published_at', 'DESC')->orderBy('id', 'DESC')->latest('published_at')->get();
 		$latest = Article::latest()->first();
 		return view('articles.index', compact('articles', 'latest'));
 	}
@@ -47,7 +46,6 @@ class ArticlesController extends Controller {
 		$this->syncTags($article, $request->input('tag_list'));
 		return redirect('Articles');
 	}
-
 
 	private function createArticle(ArticleRequest $request){
 		$article = Auth::user()->articles()->create($request->all());

@@ -20,6 +20,7 @@ elixir(function(mix) {
 	mix.styles([
 		'libs/app.css',
 		'libs/select2.min.css',
+		'libs/jquery.mCustomScrollbar.css',
 		'libs/normalize.css',
 		'libs/style.css',
 		'libs/header.css',
@@ -32,7 +33,13 @@ elixir(function(mix) {
 	mix.scripts([
 		'libs/jquery.min.js',
 		'libs/bootstrap.min.js',
-		'libs/select2.min.js'
+		'libs/select2.min.js',
+		'libs/jquery.mousewheel.min.js',
+		'libs/jquery.mCustomScrollbar.min.js',
+		
+
+		'libs/articlesIndex.js'
+
 	]);
 
 

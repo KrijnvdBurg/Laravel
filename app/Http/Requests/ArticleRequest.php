@@ -21,10 +21,10 @@ class ArticleRequest extends Request {
 	 */
 	public function rules(){
 		return [
-			'title' => 'required|min:3',
+			'title' => 'required|min:3|max:128',
 			'body' => 'required',
 			'published_at' => 'required|date',
-			'excerpt' => 'required|min:32',
+			'excerpt' => 'required|min:32|max:256',
 			'tag_list' => 'required',
 			//
 		];
